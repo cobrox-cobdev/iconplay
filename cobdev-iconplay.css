@@ -1,0 +1,66 @@
+/* CSS für die Player-Elemente */
+.player-container {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.player-icon {
+    cursor: pointer;
+    font-size: clamp(12px, 4vw, 24px);
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    margin: 0 10px;
+    transition: color 0.3s ease, -webkit-text-stroke 0.3s ease;
+}
+
+@keyframes playStart {
+    0% { color: transparent; -webkit-text-stroke: 1px white; }
+    50% { color: lime; -webkit-text-stroke: 1px lime; }
+    100% { color: transparent; -webkit-text-stroke: 1px white; }
+}
+
+@keyframes playBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes stopClick {
+    0% { color: transparent; -webkit-text-stroke: 1px white; }
+    50% { color: red; -webkit-text-stroke: 1px red; }
+    100% { color: transparent; -webkit-text-stroke: 1px white; }
+}
+
+.divider {
+    font-size: clamp(12px, 4vw, 24px);
+    color: white;
+    margin: 0 10px;
+}
+
+.status {
+    margin-top: 20px;
+    font-size: clamp(14px, 4vw, 18px);
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+    font-size: clamp(14px, 4vw, 16px);
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
